@@ -6,9 +6,9 @@ let prefix = ';'
 let joinleavechannel = '671033366644260874'
 
 client.on('ready', function (){
-    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').memberCount + ' !')
+    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').member() + ' !')
     console.log(client.user.username + ' viens de se connecter !')
-});
+})
 
 
 client.on('message', function(message){
@@ -93,6 +93,7 @@ client.on('guildMemberAdd', member => {
     member.send(dmjoin)
 
 })
+
 
 client.on('guildMemberRemove', member => {
 
