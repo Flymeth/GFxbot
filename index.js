@@ -6,7 +6,7 @@ let prefix = ';'
 let joinleavechannel = '671033366644260874'
 
 client.on('ready', function (){
-    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').members.user + ' !')
+    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').member(user) + ' !')
     console.log(client.user.username + ' viens de se connecter !')
 })
 
