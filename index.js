@@ -80,7 +80,7 @@ client.on('guildMemberAdd', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(join).then(message => message.delete(500000))
+    client.channels.get(joinleavechannel).send(join)
 
     let dmjoin = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
@@ -105,5 +105,5 @@ client.on('guildMemberRemove', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(leave).then(message => message.delete(500000))
+    client.channels.get(joinleavechannel).send(leave)
 })
