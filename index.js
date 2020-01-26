@@ -8,7 +8,7 @@ let joinleavechannel = '592105420735381536'
 client.on('ready', function (){
     client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').memberCount + ' !')
     console.log(client.user.username + ' viens de se connecter !')
-})
+});
 
 
 client.on('message', function(message){
@@ -51,6 +51,8 @@ client.on('message', function(message){
     }
 
     if(message.content === prefix + 'help'){
+
+        message.delete()
         
         let help = new Discord.RichEmbed()
         .setAuthor('Commandes et fonction du ' + client.user.username + ':', 'https://cdn.pixabay.com/photo/2012/04/14/12/44/question-mark-33777_960_720.png')
@@ -60,8 +62,10 @@ client.on('message', function(message){
         .addField('**' + prefix + 'infos', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'stop', 'Déconnecte le bot.\n> **Seul Flymeth y a accès.', true)
 
+        message.channel.send(help);
+
     }
-})
+});
 
 client.on('guildMemberAdd', member => {
 
@@ -75,7 +79,7 @@ client.on('guildMemberAdd', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(join).then(message => message.delete(500000))
+    client.channels.get(joinleavechannel).send(join).then(message => message.delete(500000));
 
     let dmjoin = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
@@ -85,13 +89,13 @@ client.on('guildMemberAdd', member => {
     .addField(':warning: **__ATTENTION:__** :warning:', '***Le GFXserver dispose d\'un systeme de vérification! Pour passer la vérification, randez-vous dans le salon textuel \n<#593824737646346302> ! Merci.***')
     .setFooter(client.user.username + ', bot only for GFXserver ! Develloped by Flymeth#6242', client.user.avatarURL)
 
-    member.send(dmjoin)
+    member.send(dmjoin);
 
-})
+});
 
 client.on('guildMemberRemove', member => {
 
-    member.addRole('593822869683699723')
+    member.addRole('593822869683699723');
 
     let leave = new Discord.RichEmbed()
     .setAuthor(member.user.username + ' viens de quitter le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015840702791696/moins_bot.png')
@@ -100,5 +104,5 @@ client.on('guildMemberRemove', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(leave).then(message => message.delete(500000))
-})
+    client.channels.get(joinleavechannel).send(leave).then(message => message.delete(500000));
+});
