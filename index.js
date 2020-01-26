@@ -78,11 +78,12 @@ client.on('guildMemberAdd', member => {
     .setThumbnail(member.guild.iconURL)
     .setColor('#2EFF73')
     .setTimestamp()
-    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
+    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + ' a rejoint le serveur', member.user.avatarURL)
 
     client.channels.get(joinleavechannel).send(join)
 
     let dmjoin = new Discord.RichEmbed()
+    .setColor('RANDOM')
     .setThumbnail(member.user.avatarURL)
     .setAuthor('Bienvenue sur le serveur, ' + member.user.username + ' !')
     .setDescription('Tu es notre ' + member.guild.memberCount + 'e membres !')
@@ -104,7 +105,7 @@ client.on('guildMemberRemove', member => {
     .setThumbnail(member.guild.iconURL)
     .setColor('#FF2E2E')
     .setTimestamp()
-    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
+    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + ' a quitté le serveur', member.user.avatarURL)
 
     client.channels.get(joinleavechannel).send(leave)
 })
