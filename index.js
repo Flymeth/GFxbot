@@ -3,7 +3,7 @@ const client = new Discord.Client
 client.login(process.env.TOKEN)
 
 let prefix = ';'
-let joinleavechannel = '592105420735381536'
+let joinleavechannel = '671033366644260874'
 
 client.on('ready', function (){
     client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').memberCount + ' !')
@@ -59,8 +59,8 @@ client.on('message', function(message){
         .setFooter('Commande demandé par ' + message.author.username + ' !', message.author.avatarURL)
         .addBlankField()
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
-        .addField('**' + prefix + 'infos', 'Affiche les informations du serveur.', true)
-        .addField('**' + prefix + 'stop', 'Déconnecte le bot.\n> **Seul Flymeth y a accès.**', true)
+        .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
+        .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
 
         message.channel.send(help)
 
