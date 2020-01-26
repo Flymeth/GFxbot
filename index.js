@@ -63,7 +63,7 @@ client.on('message', function(message){
         .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
 
-        message.channel.send(help)
+        message.channel.send(help).then(message => message.delete(100000))
 
     }
 })
