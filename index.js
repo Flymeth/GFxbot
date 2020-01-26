@@ -6,7 +6,7 @@ let prefix = ';'
 let joinleavechannel = '671033366644260874'
 
 client.on('ready', function (){
-    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').me + ' !')
+    client.user.setActivity(prefix + 'help | Nous sommes: ' + client.guilds.get('591932173263568896').memberCount + ' !')
     console.log(client.user.username + ' viens de se connecter !')
 })
 
@@ -86,7 +86,7 @@ client.on('guildMemberAdd', member => {
     .setThumbnail(member.user.avatarURL)
     .setAuthor('Bienvenue sur le serveur, ' + member.user.username + ' !')
     .setDescription('Tu es notre ' + member.guild.memberCount + 'e membres !')
-    .addField(':sparkling_heart: __Tu veut aider le GFXserver ?__ :sparkling_heart:', 'Alors invites tes amis en copiant, puis collant ce lien: **https://discord.gg/pF8ZuAp \n**', true)
+    .addField(':sparkling_heart: __Tu veut aider le GFXserver ?__ :sparkling_heart:', 'Alors invites tes amis en copiant, puis collant ce lien: **https://discord.gg/4X5aQRn \n**', true)
     .addField(':warning: **__ATTENTION:__** :warning:', '***Le GFXserver dispose d\'un systeme de vérification! Pour passer la vérification, randez-vous dans le salon textuel \n<#593824737646346302> ! Merci.***')
     .setFooter(client.user.username + ', bot only for GFXserver ! Develloped by Flymeth#6242', client.user.avatarURL)
 
