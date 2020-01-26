@@ -62,10 +62,10 @@ client.on('message', function(message){
         .addField('**' + prefix + 'infos', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'stop', 'Déconnecte le bot.\n> **Seul Flymeth y a accès.', true)
 
-        message.channel.send(help);
+        message.channel.send(help)
 
     }
-});
+})
 
 client.on('guildMemberAdd', member => {
 
@@ -79,7 +79,7 @@ client.on('guildMemberAdd', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(join).then(message => message.delete(500000));
+    client.channels.get(joinleavechannel).send(join).then(message => message.delete(500000))
 
     let dmjoin = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
@@ -89,9 +89,9 @@ client.on('guildMemberAdd', member => {
     .addField(':warning: **__ATTENTION:__** :warning:', '***Le GFXserver dispose d\'un systeme de vérification! Pour passer la vérification, randez-vous dans le salon textuel \n<#593824737646346302> ! Merci.***')
     .setFooter(client.user.username + ', bot only for GFXserver ! Develloped by Flymeth#6242', client.user.avatarURL)
 
-    member.send(dmjoin);
+    member.send(dmjoin)
 
-});
+})
 
 client.on('guildMemberRemove', member => {
 
@@ -104,5 +104,5 @@ client.on('guildMemberRemove', member => {
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + 'à quitté le serveur', member.user.avatarURL)
 
-    client.channels.get(joinleavechannel).send(leave).then(message => message.delete(500000));
-});
+    client.channels.get(joinleavechannel).send(leave).then(message => message.delete(500000))
+})
