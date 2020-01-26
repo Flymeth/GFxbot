@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client
-client.login('NjY0NTI3Mzg2NjAzNDIxNjk3.Xi21Eg.ky_6ZI4ijNnxRPcVs-DKq9yrC98')
+client.login(process.env.TOKEN)
 
 let prefix = ';'
 let joinleavechannel = '592105420735381536'
