@@ -58,6 +58,7 @@ client.on('message', function(message){
         .setAuthor('Commandes et fonction du ' + client.user.username + ':', 'https://cdn.pixabay.com/photo/2012/04/14/12/44/question-mark-33777_960_720.png')
         .setFooter('Commande demandé par ' + message.author.username + ' !', message.author.avatarURL)
         .addBlankField()
+        .setColor('RANDOM')
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
         .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
