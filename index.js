@@ -10,6 +10,7 @@ client.on('ready', function (){
     console.log(client.user.username + ' viens de se connecter !')
 })
 
+
 client.on('message', function(message){
 
     if(message.author.bot === true) {return}
@@ -50,8 +51,15 @@ client.on('message', function(message){
     }
 
     if(message.content === prefix + 'help'){
-        message.delete()
-        message.reply('Cette commande n\'a pas encore été créée !').then(message => message.delete(5000)).catch(console.error)
+        
+        let help = new Discord.RichEmbed()
+        .setAuthor('Commandes et fonction du ' + client.user.username + ':', 'https://cdn.pixabay.com/photo/2012/04/14/12/44/question-mark-33777_960_720.png')
+        .setFooter('Commande demandé par ' + message.author.username + ' !')
+        .addBlankField()
+        .addField('**' + prefix + 'help', 'Affiche le message d\'aide du bot.', true)
+        .addField('**' + prefix + 'infos', 'Affiche les informations du serveur.', true)
+        .addField('**' + prefix + 'stop', 'Déconnecte le bot.\n> **Seul Flymeth y a accès.', true)
+
     }
 })
 
