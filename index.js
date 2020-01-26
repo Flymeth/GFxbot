@@ -98,8 +98,6 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
 
-    member.addRole('593822869683699723');
-
     let leave = new Discord.RichEmbed()
     .setAuthor(member.user.username + ' viens de quitter le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015840702791696/moins_bot.png')
     .setThumbnail(member.guild.iconURL)
