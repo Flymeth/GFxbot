@@ -6,7 +6,7 @@ let prefix = ';'
 let joinleavechannel = '671033366644260874'
 
 client.on('ready', function (){
-    client.user.setActivity(prefix + 'help | GFXserver • 2020')
+    client.user.setActivity(prefix + 'help | GFXserver')
     console.log(client.user.username + ' viens de se connecter !')
 })
 
