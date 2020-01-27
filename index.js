@@ -43,6 +43,7 @@ client.on('message', function(message){
         .addBlankField()
         .addField('Membres :', message.guild.memberCount, true)
         .addField('Créé le:', 'Lundi 6 Mai 2019', true)
+        .addBlankField()
         .setFooter('Auteur de la commande: ' + message.author.username, message.author.avatarURL)
         .setTimestamp()
 
@@ -62,6 +63,7 @@ client.on('message', function(message){
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
         .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
+        .addBlankField()
 
         message.channel.send(help).then(message => message.delete(100000))
 
