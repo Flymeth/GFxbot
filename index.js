@@ -73,7 +73,7 @@ client.on('guildMemberAdd', member => {
     member.addRole('593822869683699723')
 
     let join = new Discord.RichEmbed()
-    .setAuthor(member.user.username + ' viens de rejoindre le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015851310317591/plus_bot.jpg.png')
+    .setAuthor('→ "' + member.user.username + '" viens de rejoindre le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015851310317591/plus_bot.jpg.png')
     .setDescription('Souhaitez-lui la bienvenue dans <#591932173263568898> !')
     .setThumbnail(member.guild.iconURL)
     .setColor('#2EFF73')
@@ -99,7 +99,7 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberRemove', member => {
 
     let leave = new Discord.RichEmbed()
-    .setAuthor(member.user.username + ' viens de quitter le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015840702791696/moins_bot.png')
+    .setAuthor('→ "' + member.user.username + '" viens de quitter le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015840702791696/moins_bot.png')
     .setThumbnail(member.guild.iconURL)
     .setColor('#FF2E2E')
     .setTimestamp()
