@@ -74,7 +74,7 @@ client.on('guildMemberAdd', member => {
 
     let join = new Discord.RichEmbed()
     .setAuthor('→ "' + member.user.username + '" viens de rejoindre le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015851310317591/plus_bot.jpg.png')
-    .setDescription('Souhaitez-lui la bienvenue dans <#591932173263568898> !')
+    .addBlankField()
     .setThumbnail(member.guild.iconURL)
     .setColor('#2EFF73')
     .setTimestamp()
@@ -101,6 +101,7 @@ client.on('guildMemberRemove', member => {
     let leave = new Discord.RichEmbed()
     .setAuthor('→ "' + member.user.username + '" viens de quitter le serveur !', 'https://cdn.discordapp.com/attachments/671015740002009098/671015840702791696/moins_bot.png')
     .setThumbnail(member.guild.iconURL)
+    .addBlankField()
     .setColor('#FF2E2E')
     .setTimestamp()
     .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + ' a quitté le serveur', member.user.avatarURL)
