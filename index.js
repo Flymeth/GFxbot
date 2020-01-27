@@ -43,7 +43,7 @@ client.on('message', function(message){
         .addBlankField()
         .addField('Membres :', message.guild.memberCount, true)
         .addField('Créé le:', 'Lundi 6 Mai 2019', true)
-        .setFooter('Message voulut par ' + message.author.username + ' !', message.author.avatarURL)
+        .setFooter('Auteur de la commande: ' + message.author.username + ' !', message.author.avatarURL)
         .setTimestamp()
 
         message.delete().catch(console.error)
@@ -56,7 +56,7 @@ client.on('message', function(message){
         
         let help = new Discord.RichEmbed()
         .setAuthor('Commandes et fonction du ' + client.user.username + ':', 'https://cdn.pixabay.com/photo/2012/04/14/12/44/question-mark-33777_960_720.png')
-        .setFooter('Commande demandé par ' + message.author.username + ' !', message.author.avatarURL)
+        .setFooter('Auteur de la commande: ' + message.author.username + ' !', message.author.avatarURL)
         .addBlankField()
         .setColor('RANDOM')
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
