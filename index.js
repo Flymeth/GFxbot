@@ -80,7 +80,7 @@ client.on('guildMemberAdd', member => {
     .setThumbnail(member.guild.iconURL)
     .setColor('#2EFF73')
     .setTimestamp()
-    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + ' a rejoint le serveur', member.user.avatarURL)
+    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! \n' + member.user.username + ' a rejoint le serveur', member.user.avatarURL)
 
     client.channels.get(joinleavechannel).send(join)
 
@@ -106,7 +106,7 @@ client.on('guildMemberRemove', member => {
     .addBlankField()
     .setColor('#FF2E2E')
     .setTimestamp()
-    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! ' + member.user.username + ' a quitté le serveur', member.user.avatarURL)
+    .setFooter('Nous somme désormais ' + member.guild.memberCount + ' (bots incluts) ! \n' + member.user.username + ' a quitté le serveur', member.user.avatarURL)
 
     client.channels.get(joinleavechannel).send(leave)
 })
