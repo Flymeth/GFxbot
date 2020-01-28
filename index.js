@@ -15,7 +15,7 @@ client.on('message', function(message){
 
     if(message.author.bot === true) {return}
 
-    if(message.content.startsWith(prefix + 'stop')){
+    if(message.content === prefix + 'stop'){
 
         if(!(message.author.id === '514475217779818496')) {
             message.delete()
