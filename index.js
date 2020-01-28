@@ -19,7 +19,7 @@ client.on('message', function(message){
 
         if(!(message.author.id === '514475217779818496')) {
             message.delete()
-            message.channel.send('Désolé ' + message.author + ', mais vous n\'avez pas la permission !').then(message => message.delete(2000))
+            message.channel.send('Désolé ' + message.author + ', mais vous n\'avez pas la permission !').then(message => message.delete(5000))
         }
 
         else if(message.author.id === '514475217779818496') {
