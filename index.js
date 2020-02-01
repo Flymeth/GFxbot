@@ -101,7 +101,7 @@ client.on('message', function(message){
         .setColor('RANDOM')
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
         .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
-        .addField('**' + prefix + 'links**', 'Affiche les liens utiles du serveur ou du bot.', true)
+        .addField('**' + prefix + 'links**', 'Affiche les liens utiles du serveur et du bot.', true)
         .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
         .addBlankField()
 
@@ -147,7 +147,7 @@ client.on('message', function(message){
         
             let links = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .setAuthor('Voici les liens utiles du GFXserver, ou du GFXbot...', 'https://cdn.pixabay.com/photo/2019/03/28/22/23/link-4088190_960_720.png')
+            .setAuthor('Voici les liens utiles du GFXserver et du GFXbot...', 'https://cdn.pixabay.com/photo/2019/03/28/22/23/link-4088190_960_720.png')
             .setDescription('**[Lien d\'inviation](https://discord.gg/4X5aQRn)** \n**[Instagram](https://www.instagram.com/invites/contact/?i=133r731b9uulk&utm_content=99y5xaz)** \n*Invites le bot sur ton serveur(non disponible)*')
             .setFooter('Auteur de la commande: ' + message.author.username, message.author.avatarURL)
             .setTimestamp()
