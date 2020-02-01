@@ -47,7 +47,7 @@ client.on('message', function(message){
             .addField('Pour faire la commande `' + message.content + '`, dirigez vous vers le salon textuel:', '<#' + commandschannel + '>', true)
             .setFooter(client.user.username + ', bot only for GFXserver ! Develloped by Flymeth#6242', client.user.avatarURL)
 
-            message.channel.send(falsechannel).then(message => message.delete(7000))
+            message.channel.send(falsechannel)
         }
 
         else {
