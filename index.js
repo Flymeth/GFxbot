@@ -1,9 +1,9 @@
 const Discord = require('discord.js')
 const client = new Discord.Client
 client.login(process.env.TOKEN)
-
 let prefix = ';'
 let joinleavechannel = '671033366644260874'
+let commandschannel = '593820160951975936'
 
 client.on('ready', function (){
     client.user.setActivity(prefix + 'help | GFXserver')
@@ -37,18 +37,37 @@ client.on('message', function(message){
 
     if(message.content === prefix + 'infos'){
 
-        let info = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setAuthor('Information sur le GFXserver:', message.guild.iconURL)
-        .addBlankField()
-        .addField('Membres :', message.guild.memberCount, true)
-        .addField('Créé le:', 'Lundi 6 Mai 2019', true)
-        .addBlankField()
-        .setFooter('Auteur de la commande: ' + message.author.username, message.author.avatarURL)
-        .setTimestamp()
+        if(!(message.channel.id === commandschannel)) {
 
-        message.delete().catch(console.error)
-        message.channel.send(info).then(message => message.delete(100000)).catch(console.error)
+            message.delete()
+
+            let falsechannel = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setAuthor('Erreur de salon, ' + message.author.username + ' !', message.author.avatarURL)
+            .addField('Pour faire la commande `' + message.content + '`, dirigez vous vers le salon textuel:', '<#' + commandschannel + '>', true)
+            .setFooter(client.user.username + ', bot only for GFXserver ! Develloped by Flymeth#6242', client.user.avatarURL)
+
+            message.channel.send(falsechannel).then(message => message.delete(7000))
+        }
+
+        else {
+
+            let info = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setAuthor('Information sur le GFXserver:', message.guild.iconURL)
+            .addBlankField()
+            .addField('Membres :', message.guild.memberCount, true)
+            .addField('Créé le:', 'Lundi 6 Mai 2019', true)
+            .addBlankField()
+            .setFooter('Auteur de la commande: ' + message.author.username, message.author.avatarURL)
+            .setTimestamp()
+
+            message.delete().catch(console.error)
+            message.channel.send(info).then(message => message.delete(100000)).catch(console.error)
+
+        }
+
+        
     }
 
     if(message.content === prefix + 'help'){
