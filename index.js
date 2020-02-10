@@ -157,6 +157,25 @@ client.on('message', function(message){
         }
 
     }
+
+    if(message.content === prefix + 'me'){
+
+        message.delete()
+
+        let me = new Discord.RichEmbed()
+
+        .setColor('RANDOM')
+        .setAuthor('Voici vos informations, ' + message.author.username + '...', message.author.avatarURL)
+
+        .addField('Créé le:', message.author.createdAt.getDay() + '/' + message.author.createdAt.getMonth() + '/' + message.author.createdAt.getFullYear(), true)
+        .addField('ID:', message.author.id, true)
+        .addField('Tag:', message.author.tag, true)
+
+        .setFooter('Auteur de la commande: ' + message.author.username, message.author.avatarURL)
+
+        message.channel.send(me).then(message => message.delete(100000))
+
+    }
 })
 
 client.on('guildMemberAdd', member => {
