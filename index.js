@@ -100,6 +100,7 @@ client.on('message', function(message){
         .addBlankField()
         .setColor('RANDOM')
         .addField('**' + prefix + 'help**', 'Affiche le message d\'aide du bot.', true)
+        .addField('**' + prefix + 'me**', 'Affiche les informations de la personne ayant fait la commande.', true)
         .addField('**' + prefix + 'infos**', 'Affiche les informations du serveur.', true)
         .addField('**' + prefix + 'links**', 'Affiche les liens utiles du serveur et du bot.', true)
         .addField('**' + prefix + 'stop**', 'Déconnecte le bot.\n> *Seul Flymeth y a accès.*', true)
